@@ -25,7 +25,8 @@ namespace HandelsbankenKreditkort
             TransactionCollectionViewModel vm = new TransactionCollectionViewModel();
             try
             {
-                var fi = new FileInfo(path);
+                var uri = new Uri(path);
+                var fi = new FileInfo(uri.LocalPath);
 
                 using (var reader = new PdfReader(fi))
                 using (var doc = new PdfDocument(reader))
