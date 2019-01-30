@@ -42,7 +42,7 @@ namespace HandelsbankenKreditkort
                 var strategy = new LocationTextExtractionStrategy2();
                 sb.AppendLine(PdfTextExtractor.GetTextFromPage(page, strategy));                
             }
-            var fi = new FileInfo(@"t:\kreditkort.txt");
+            var fi = new FileInfo(@"logs\kreditkort.txt");
 
             using (var reader = new LoggingEnumerator(fi, new LineEnumerator(sb.ToString())))
             {
