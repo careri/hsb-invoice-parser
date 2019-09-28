@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 
 namespace HandelsbankenKreditkort
@@ -23,6 +24,9 @@ namespace HandelsbankenKreditkort
         internal static TransactionCollectionViewModel Parse(string path)
         {
             TransactionCollectionViewModel vm = new TransactionCollectionViewModel();
+            var cult = CultureInfo.CurrentCulture;
+            var swedish = CultureInfo.GetCultureInfo(1053);
+            CultureInfo.CurrentCulture = swedish;
             try
             {
                 var uri = new Uri(path);
@@ -44,7 +48,7 @@ namespace HandelsbankenKreditkort
                             int month = int.Parse(match.Groups["month"].Value);
                             int day = int.Parse(match.Groups["day"].Value);
                             var date = new DateTime(year, month, day);
-                            var amount = double.Parse(match.Groups["amount"].Value);
+                            var amount = ParseDouble(match.Groups["amount"].Value);
                             var shop = match.Groups["shop"].Value;
                             var city= match.Groups["city"].Value;
 
@@ -57,7 +61,17 @@ namespace HandelsbankenKreditkort
             {
                 vm.Error = ex.ToString();
             }
+            finally
+            {
+                CultureInfo.CurrentCulture = cult;
+            }
             return vm;
+        }
+
+        private static double ParseDouble(string value)
+        {
+            // We no it's swedish. But they use space
+            return double.Parse(value);
         }
 
         public int Count => m_items.Count; 
