@@ -11,7 +11,7 @@ namespace HandelsbankenKreditkort
     {
         private bool m_isShared;
 
-        public TransactionViewModel(DateTime date, string shop, string city, double amount, double amountForeign, double rate, string? currency, bool isShared)
+        public TransactionViewModel(DateTime date, string shop, string city, double amount, double amountForeign, double rate, string currency, bool isShared)
         {
             Date = date;
             Shop = shop;
@@ -28,7 +28,7 @@ namespace HandelsbankenKreditkort
         public string City { get; }
         public double Amount { get; }
         public double AmountForeign { get; }
-        public string? CurrencyForeign { get; }
+        public string CurrencyForeign { get; }
         public double RateForeign { get; }
 
         public bool IsShared
@@ -45,7 +45,7 @@ namespace HandelsbankenKreditkort
         }
 
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void TriggerPropertyChanged(string propertyName)
         {

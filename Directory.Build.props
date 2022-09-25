@@ -1,0 +1,23 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Carl Ericsson</Authors>
+    <Company>Carl Ericsson</Company>
+    <Product>Handelsbanken Invoice Parser</Product>
+    <Description>Parses a HSB PDF Invoice.</Description>
+    <Copyright>Copyright 2022</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  
+</Project>

@@ -12,12 +12,12 @@ namespace HandelsbankenKreditkort
     {
         private readonly ObservableCollection<TransactionViewModel> m_items;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public TransactionCollectionViewModel()
         {
             m_items = new ObservableCollection<TransactionViewModel>();
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
 
         public string Error { get; private set; }
 
@@ -68,11 +68,6 @@ namespace HandelsbankenKreditkort
             return vm;
         }
 
-        public TransactionViewModel GetItem(int rowNo)
-        {
-            return m_items[rowNo];
-        }
-
         private static double ParseDouble(string value)
         {
             // We no it's swedish. But they use space
@@ -87,6 +82,6 @@ namespace HandelsbankenKreditkort
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Count"));
         }
 
-        public IReadOnlyCollection<TransactionViewModel> Items => m_items; 
+        public IEnumerable<TransactionViewModel> Items => m_items; 
     }
 }

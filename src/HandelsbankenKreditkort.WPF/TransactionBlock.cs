@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,7 +28,7 @@ namespace HandelsbankenKreditkort
             return m_lines.GetEnumerator();
         }
 
-        internal static bool TryRead(IEnumerator<string> reader, [NotNullWhen(true)] out TransactionBlock? block)
+        internal static bool TryRead(IEnumerator<string> reader, out TransactionBlock block)
         {
             if (FindStart(reader))
             {
@@ -42,7 +41,7 @@ namespace HandelsbankenKreditkort
             return block != null;
         }
 
-        private static TransactionBlock? ReadBlock(IEnumerator<string> reader)
+        private static TransactionBlock ReadBlock(IEnumerator<string> reader)
         {
             var lines = new List<string>();
 

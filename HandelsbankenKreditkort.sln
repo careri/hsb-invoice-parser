@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandelsbankenKreditkort", "HandelsbankenKreditkort\HandelsbankenKreditkort.csproj", "{02DDE4F5-6B61-49E0-AA50-FF9EDB7306BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandelsbankenKreditkort.Cli", "src\HandelsbankenKreditkort.Cli\HandelsbankenKreditkort.Cli.csproj", "{02DDE4F5-6B61-49E0-AA50-FF9EDB7306BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandelsbankenKreditkort", "src\HandelsbankenKreditkort\HandelsbankenKreditkort.csproj", "{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,13 @@ Global
 		{02DDE4F5-6B61-49E0-AA50-FF9EDB7306BF}.DebugPreBuilt|Any CPU.Build.0 = DebugPreBuilt|Any CPU
 		{02DDE4F5-6B61-49E0-AA50-FF9EDB7306BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DDE4F5-6B61-49E0-AA50-FF9EDB7306BF}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.DebugPreBuilt|Any CPU.ActiveCfg = DebugPreBuilt|Any CPU
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.DebugPreBuilt|Any CPU.Build.0 = DebugPreBuilt|Any CPU
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31360A31-09D3-4BA2-B1F2-05F0FCD8A3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

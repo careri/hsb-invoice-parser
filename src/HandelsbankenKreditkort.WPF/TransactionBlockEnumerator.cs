@@ -18,7 +18,7 @@ namespace HandelsbankenKreditkort
     {
         private readonly PdfDocument m_doc;
         private readonly Lazy<TransactionBlock[]> m_blocks;
-        private TransactionBlock? m_current;
+        private TransactionBlock m_current;
         private int m_index = -1;
 
 
@@ -46,7 +46,9 @@ namespace HandelsbankenKreditkort
 
             using (var reader = new LoggingEnumerator(fi, new LineEnumerator(sb.ToString())))
             {
-                while (TransactionBlock.TryRead(reader, out var block))
+                TransactionBlock block;
+
+                while (TransactionBlock.TryRead(reader, out block))
                 {
                     list.Add(block);
                 }
@@ -55,9 +57,9 @@ namespace HandelsbankenKreditkort
             return list.ToArray();
         }
 
-        public TransactionBlock Current => m_current ?? throw new InvalidOperationException("You must MoveNext first");
+        public TransactionBlock Current => m_current;
 
-        object IEnumerator.Current => Current;
+        object IEnumerator.Current => m_current;
 
         public void Dispose()
         {

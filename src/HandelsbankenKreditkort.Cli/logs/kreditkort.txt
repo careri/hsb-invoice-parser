@@ -1,0 +1,123 @@
+2022-09-15;;1 (3)
+KONTOUTDRAG / FAKTURA
+Falun
+ALLKORT
+Box 313
+791 27 Falun
+Ericsson Carl
+Sandlandsstigen 4
+791 46  Falun
+ALLKORTSKONTO;;507 744 128
+Kreditkort Carl
+Uppgifter per 2022-09-15;;Kundbonus - samtliga dina Allkortskonton
+Saldo på kontot;;1,25 kr;;Dina bonushöjande tjänster är bolån, fonder, sparande på konto och
+månadssparande.
+Kortköp 2022-08-16 - 2022-09-15;;-6 643,50 kr
+Logga in på internettjänsten och läs mer under Kort/Kundbonus.
+Summa;;-6 642,25 kr
+Poäng;;Belopp SEK
+Ingående poängsaldo;;10 903
+Beviljad kredit;;20 000,00 kr
+Poäng erhållna för köp under perioden;;6 644
+Disponibelt belopp;;13 357,75 kr
+Summa poäng;;17 547
+Bonusutbetalning;;2022-09-15;;0;;0
+Skuldränta;;11,10 %
+Nytt poängsaldo;;17 547
+Tillgodoränta upp till 100 000 kr;;0,00 %
+Poäng kvar till nästa utbetalning;;2 453
+Ackumulerade bonusutbetalningar;;3 170
+På www.handelsbanken.se/fonder hittar du faktablad för Multi Asset 50 och villkor
+för innehav och handel i fonden: "Handel med Handelsbankens okomplicerade 
+fonder". Du kan också få faktablad och villkor på ditt bankkontor.
+KONTOUTDRAG
+Resk.datum;;Trans.datum;;Transaktion;;Insättning;;Uttag (-);;Saldo/skuld(-)
+Ingående saldo 2022-08-16;;0,93
+2022-08-31;;2022-08-31;;Överf Mobil;;3 298,00;;3 298,93
+2022-09-01;;2022-08-31;;KORTKÖP FÖREG PERIOD;;-3 297,68;;1,25
+Utgående saldo 2022-09-15;;1,25
+KORTKÖP
+ERICSSON CARL      ALLKORT MASTERCARD      5226 61** **** 0905       
+Köpdatum;;Inköpsställe Ort;;Utländskt belopp;;Valuta;;Kurs;;Belopp SEK
+2022-08-17;;BookBeat;;Stockholm;;-148,00
+2022-08-18;;APPLE.COM/BILL;;020100529;;-89,00
+2022-08-18;;FALUAPPEN;;FALUN;;-5,16
+2022-08-23;;GOOGLE *Google Storage;;650-253-0000;;-99,00
+2022-08-24;;SJ.SE;;STOCKHOLM;;-772,00
+2022-08-26;;RESTAURANG CHINA THAI;;FALUN;;-110,00
+2022-08-27;;Mono Loco Sverige AB;;FALUN;;-260,00
+2022-08-27;;Mono Loco Sverige AB;;FALUN;;-25,00
+2022-08-27;;UZR*Bergfreunde GmbH;;Kirchentellin;;-194,88;;EUR;;10,81024;;-2 106,70
+2022-09-01;;UNDERVERKET;;Borlange;;-1 508,00
+2022-09-01;;RABATT PREEM;;PREEM;;3,04
+2022-09-01;;PREEM;;FALUN;;-746,68
+2022-09-02;;JOHNS SPORT;;MORA;;-518,00
+2022-09-10;;AB GR@NA LUNDS;;Stockholm;;-60,00
+2022-09-11;;NETFLIX.COM;;Amsterdam;;-129,00
+2022-09-14;;SPORTHALLEN LUG;;FALUN;;-70,00
+Summa;;-6 643,50
+Periodens kortköp bokförda  2022-08-16 - 2022-09-15;;-6 643,50 kr
+Svenska Handelsbanken AB (publ);;Postadress:;;Gatuadress:;;Telefon:;;Bankgiro:
+Styrelsens säte: Stockholm;;Box 313;;Åsgatan 35;;+46 (0)23 76 78 60;;792-4012
+Organisationsnr: 502007-7862;;791 27 Falun;;Telefax:
+Clearingnr: 6451;;falun@handelsbanken.se;;+46 (0)23 76 78 90
+www.handelsbanken.se/falun
+2022-09-15;;2 (3)
+KONTOUTDRAG / FAKTURA
+Falun
+ALLKORT
+Ericsson Carl
+BELOPP ATT BETALA - SKA VARA ÖVERFÖRT TILL ALLKORTSKONTO 507 744 128 SENAST DEN 30 SEPTEMBER 2022
+Vill du betala hela skulden;;6 642,25 kr
+Lägsta belopp att betala;;0,00 kr
+Redovisning av utlandstransaktioner;;Insättningsgaranti;;Spärr av kort
+Utländska köp/uttag räknas om från utländsk Kontot omfattas av den statliga insättningsgarantin enligt beslut Ring 020-41 12 12, från utlandet +46 8 41 12 122,
+valuta till SEK efter en valutakurs som sätts av av Riksgälden. Ersättningen är högst 1 050 000 kr för varje dygnet runt, alla dagar.
+MasterCard resp Visa. Handelsbankens kund och Riksgälden ska göra ersättningen tillgänglig för 
+Eget kortmotiv
+valutaväxlingsavgift, f n 1,65 % på omräknat utbetalning inom 7 arbetsdagar efter att rätt till ersättning 
+Avgift för eget kortmotiv redovisas inklusive moms.
+belopp, ingår i angivet belopp i SEK.;;inträtt. Läs mer på www.handelsbanken.se/insättningsgaranti 
+2022-09-15;;3 (3)
+KONTOUTDRAG / FAKTURA
+Falun
+ALLKORT
+Ericsson Carl
+Du kan betala på något av följande sätt
+Egen överföring direkt till Allkortskontot 
+Du för över beloppet från ett annat konto i Handelsbanken till ditt Allkortskonto. Det gör du enklast genom en 
+överföring via Handelsbankens Internettjänst eller Telefontjänster (Mobiltjänsten och Telesvar).
+Har du inte Handelsbankens Internettjänst eller Telefontjänster kontakta ditt Handelsbankskontor.
+Automatisk överföring direkt till Allkortskontot 
+På förfallodagen förs beloppet automatiskt över från ett annat konto i Handelsbanken till ditt Allkortskonto.
+Du väljer om du vill betala lägsta belopp, dvs 1/20 av skulden eller hela skulden.
+Kontakta ditt bankkontor om du vill starta en automatisk överföring. 
+Via Bankgiro 
+Du kan också betala med bifogad bankgiroavi. Tänk på att betala i god tid före förfallodagen.
+Öka ditt köputrymme 
+Vill du öka ditt köputrymme, gör du det enklast med en överföring till ditt Allkortskonto via Handelsbankens
+Internettjänst eller Telefontjänster. 
+BELOPP ATT BETALA - SKA VARA ÖVERFÖRT TILL ALLKORTSKONTO 507 744 128 SENAST DEN 30 SEPTEMBER 2022
+Vill du betala hela skulden;;6 642,25 kr
+Lägsta belopp att betala;;0,00 kr
+INBETALNING/GIRERING  AVI
+Inbet avgift (ifylls av banken)
+OCR
+Belopp kronor;;öre
+Fyll i det 
+ belopp 
+    som 
+ betalas   
+Betalningsavsändare;;Kontonummer
+Handelsbanken tillhanda senast:;;2022-09-30
+Ericsson Carl;;507 744 128
+Sandlandsstigen 4
+791 46  Falun
+Från bankgironr (vid girering)
+Till bankgironr;;Betalningsmottagare
+313-8336;;Handelsbanken, ALLKORT
+VAR GOD GÖR INGA ÄNDRINGAR;;MEDDELANDEN KAN INTE LÄMNAS PÅ AVIN;;DEN AVLÄSES MASKINELLT
+Referensnr
+50774412816
+#;;#;;>;;3138336#42#
+BG 130 OCR spec

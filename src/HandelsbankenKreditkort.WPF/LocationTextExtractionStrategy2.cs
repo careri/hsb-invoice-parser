@@ -1,25 +1,29 @@
-﻿using iText.Commons.Utils;
+﻿using iText.IO.Util;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Data;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace HandelsbankenKreditkort
 {
     public static class DicExt
     {
-        public static TValue? Get<TKey, TValue>(this IDictionary<TKey, TValue> col, TKey key)
+        public static TValue Get<TKey, TValue>(this IDictionary<TKey, TValue> col, TKey key)
         {
-            return key != null && col.TryGetValue(key, out var candidate)
-                ? candidate
-                : default;
+            TValue result = default(TValue);
+            if (key != null)
+            {
+                col.TryGetValue(key, out result);
+            }
+            return result;
         }
-
-        public static TValue? Put<TKey, TValue>(this IDictionary<TKey, TValue> col, TKey key, TValue value)
+        public static TValue Put<TKey, TValue>(this IDictionary<TKey, TValue> col, TKey key, TValue value)
         {
-            var result = col.Get(key);
+            TValue result = col.Get(key);
             col[key] = value;
             return result;
         }
@@ -58,49 +62,42 @@ namespace HandelsbankenKreditkort
         public class TextChunk : IComparable<LocationTextExtractionStrategy2.TextChunk>
         {
             /// <summary>the text of the chunk</summary>
-            private readonly string _text;
-
-            private readonly LocationTextExtractionStrategy2.ITextChunkLocation _location;            
-
+            protected internal readonly string text;
+            protected internal readonly LocationTextExtractionStrategy2.ITextChunkLocation location;
             public TextChunk(string @string, LocationTextExtractionStrategy2.ITextChunkLocation loc)
             {
-                this._text = @string;
-                this._location = loc;
+                this.text = @string;
+                this.location = loc;
             }
-
-            protected internal string Text => _text;
-
-            protected internal ITextChunkLocation Location => _location;
-
             /// <returns>the text captured by this chunk</returns>
             public virtual string GetText()
             {
-                return this.Text;
+                return this.text;
             }
             public virtual LocationTextExtractionStrategy2.ITextChunkLocation GetLocation()
             {
-                return this.Location;
+                return this.location;
             }
             /// <summary>Compares based on orientation, perpendicular distance, then parallel distance</summary>
             /// <seealso cref="!:System.IComparable&lt;T&gt;.CompareTo(System.Object)" />
-            public virtual int CompareTo(LocationTextExtractionStrategy2.TextChunk? rhs)
+            public virtual int CompareTo(LocationTextExtractionStrategy2.TextChunk rhs)
             {
-                return this.Location.CompareTo(rhs?.Location);
+                return this.location.CompareTo(rhs.location);
             }
             internal virtual void PrintDiagnostics()
             {
                 Console.Out.WriteLine(string.Concat(new object[]
                 {
                     "Text (@",
-                    this.Location.GetStartLocation(),
+                    this.location.GetStartLocation(),
                     " -> ",
-                    this.Location.GetEndLocation(),
+                    this.location.GetEndLocation(),
                     "): ",
-                    this.Text
+                    this.text
                 }));
-                Console.Out.WriteLine("orientationMagnitude: " + this.Location.OrientationMagnitude());
-                Console.Out.WriteLine("distPerpendicular: " + this.Location.DistPerpendicular());
-                Console.Out.WriteLine("distParallel: " + this.Location.DistParallelStart());
+                Console.Out.WriteLine("orientationMagnitude: " + this.location.OrientationMagnitude());
+                Console.Out.WriteLine("distPerpendicular: " + this.location.DistPerpendicular());
+                Console.Out.WriteLine("distParallel: " + this.location.DistParallelStart());
             }
             internal virtual bool SameLine(LocationTextExtractionStrategy2.TextChunk lastChunk)
             {
@@ -242,7 +239,7 @@ namespace HandelsbankenKreditkort
             }
             public virtual int Compare(LocationTextExtractionStrategy2.TextChunk o1, LocationTextExtractionStrategy2.TextChunk o2)
             {
-                return this.locationComparator.Compare(o1.Location, o2.Location);
+                return this.locationComparator.Compare(o1.location, o2.location);
             }
         }
         private class TextChunkLocationComparator : IComparer<LocationTextExtractionStrategy2.ITextChunkLocation>
@@ -291,7 +288,7 @@ namespace HandelsbankenKreditkort
         private readonly LocationTextExtractionStrategy2.ITextChunkLocationStrategy tclStrat;
         private bool useActualText;
         private bool rightToLeftRunDirection;
-        private TextRenderInfo? lastTextRenderInfo;
+        private TextRenderInfo lastTextRenderInfo;
         /// <summary>Creates a new text extraction renderer.</summary>
         public LocationTextExtractionStrategy2() : this(new LocationTextExtractionStrategy2._ITextChunkLocationStrategy_88())
         {
@@ -355,9 +352,7 @@ namespace HandelsbankenKreditkort
                 }
                 if (this.useActualText)
                 {
-                    var canvasTag = (this.lastTextRenderInfo != null) ?
-                        this.FindLastTagWithActualText(this.lastTextRenderInfo.GetCanvasTagHierarchy())
-                        : null;
+                    CanvasTag canvasTag = (this.lastTextRenderInfo != null) ? this.FindLastTagWithActualText(this.lastTextRenderInfo.GetCanvasTagHierarchy()) : null;
                     if (canvasTag != null && canvasTag == this.FindLastTagWithActualText(textRenderInfo.GetCanvasTagHierarchy()))
                     {
                         LocationTextExtractionStrategy2.TextChunk textChunk = this.locationalResult[this.locationalResult.Count - 1];
@@ -381,7 +376,7 @@ namespace HandelsbankenKreditkort
                 this.lastTextRenderInfo = textRenderInfo;
             }
         }
-        public virtual ICollection<EventType>? GetSupportedEvents()
+        public virtual ICollection<EventType> GetSupportedEvents()
         {
             return null;
         }
@@ -394,27 +389,27 @@ namespace HandelsbankenKreditkort
             IList<LocationTextExtractionStrategy2.TextChunk> list = new List<LocationTextExtractionStrategy2.TextChunk>(this.locationalResult);
             this.SortWithMarks(list);
             StringBuilder stringBuilder = new StringBuilder();
-            LocationTextExtractionStrategy2.TextChunk? textChunk = null;
+            LocationTextExtractionStrategy2.TextChunk textChunk = null;
             foreach (LocationTextExtractionStrategy2.TextChunk current in list)
             {
                 if (textChunk == null)
                 {
-                    stringBuilder.Append(current.Text);
+                    stringBuilder.Append(current.text);
                 }
                 else
                 {
                     if (current.SameLine(textChunk))
                     {
-                        if (this.IsChunkAtWordBoundary(current, textChunk) && !this.StartsWithSpace(current.Text) && !this.EndsWithSpace(textChunk.Text))
+                        if (this.IsChunkAtWordBoundary(current, textChunk) && !this.StartsWithSpace(current.text) && !this.EndsWithSpace(textChunk.text))
                         {
                             stringBuilder.Append(";;");
                         }
-                        stringBuilder.Append(current.Text);
+                        stringBuilder.Append(current.text);
                     }
                     else
                     {
                         stringBuilder.Append('\n');
-                        stringBuilder.Append(current.Text);
+                        stringBuilder.Append(current.text);
                     }
                 }
                 textChunk = current;
@@ -465,9 +460,9 @@ namespace HandelsbankenKreditkort
                 Console.Out.WriteLine();
             }
         }
-        private CanvasTag? FindLastTagWithActualText(IList<CanvasTag> canvasTagHierarchy)
+        private CanvasTag FindLastTagWithActualText(IList<CanvasTag> canvasTagHierarchy)
         {
-            CanvasTag? result = null;
+            CanvasTag result = null;
             foreach (CanvasTag current in canvasTagHierarchy)
             {
                 if (current.GetActualText() != null)
@@ -495,7 +490,7 @@ namespace HandelsbankenKreditkort
                             LocationTextExtractionStrategy2.ITextChunkLocation location2 = textChunks[j].GetLocation();
                             if (!location2.GetStartLocation().Equals(location2.GetEndLocation()) && this.ContainsMark(location2, location))
                             {
-                                var textChunkMarks = col.Get(textChunks[j]);
+                                LocationTextExtractionStrategy2.TextChunkMarks textChunkMarks = col.Get(textChunks[j]);
                                 if (textChunkMarks == null)
                                 {
                                     textChunkMarks = new LocationTextExtractionStrategy2.TextChunkMarks();
@@ -535,7 +530,7 @@ namespace HandelsbankenKreditkort
             textChunks.Clear();
             foreach (LocationTextExtractionStrategy2.TextChunk current in list)
             {
-                var textChunkMarks2 = col.Get(current);
+                LocationTextExtractionStrategy2.TextChunkMarks textChunkMarks2 = col.Get(current);
                 if (textChunkMarks2 != null)
                 {
                     if (!this.rightToLeftRunDirection)

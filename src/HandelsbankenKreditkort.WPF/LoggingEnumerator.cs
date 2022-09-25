@@ -15,8 +15,8 @@ namespace HandelsbankenKreditkort
 
         public LoggingEnumerator(FileInfo fi, IEnumerator<string> decorated)
         {
-            fi.Directory!.Create();
             m_decorated = decorated;
+            fi.Directory.Create();
             m_writer = new StreamWriter(fi.Open(FileMode.Create, FileAccess.ReadWrite, FileShare.Read));
         }
 

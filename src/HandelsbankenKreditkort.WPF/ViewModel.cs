@@ -1,27 +1,30 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HandelsbankenKreditkort
 {
     public class ViewModel : INotifyPropertyChanged
     {
         private string m_file;
+        private readonly RelayCommand m_parse;
         private TransactionCollectionViewModel m_collection;
 
         public ViewModel()
         {
             m_collection = new TransactionCollectionViewModel();
+            m_parse = new RelayCommand(o => true, Parse);
         }
 
-        public ViewModel(FileInfo fi) : this()
-        {
-            Parse(fi);
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public void Parse(FileInfo fi)
+        private void Parse(object o)
         {
-            var path = FilePath = fi.FullName;
+            var path = FilePath;
             Unbind();
             if (string.IsNullOrEmpty(path))
             {
@@ -63,6 +66,7 @@ namespace HandelsbankenKreditkort
             }
         }
 
+        public ICommand ParseCmd => m_parse;
 
         public TransactionCollectionViewModel Transactions => m_collection;
 
@@ -78,7 +82,7 @@ namespace HandelsbankenKreditkort
         public string FilePath
         {
             get => m_file;
-            private set
+            set
             {
                 m_file = value;
                 TriggerPropertyChanged("FilePath");
